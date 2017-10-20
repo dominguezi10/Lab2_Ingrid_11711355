@@ -45,7 +45,7 @@ public class Clases {
                 +"\nSeccion : "+seccion
                 +"\nCantida Maxima Alumnos: "+CantidaMaxAlumnos
                 +"\nMaestro: "+maestro
-                +"\nUnidades Valorativas: "+unidadesValorativas;
+                +"\nUnidades Valorativas: "+unidadesValorativas +"\n";
     }// fin del metodo
     
     

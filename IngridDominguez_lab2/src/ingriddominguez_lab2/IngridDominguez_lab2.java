@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import Administracion.Clases;
 import Administracion.Maestro;
+import Matricula.Alumnos;
 /**
  *
  * @author 1234
@@ -23,17 +24,18 @@ public class IngridDominguez_lab2 {
     static int contSeccion = 0;
     public static void main(String[] args) {
         String resp = "p";
-        while (!resp.equals("e")) {
+        while (!resp.equals("d"
+                + "")) {
             resp = JOptionPane.showInputDialog("Ingresa tu opcion: \n"
                     + "a.- Administracion\n"
                     + "b.- Matricula \n"
                     + "c.- Log in\n"
-                    + "e.- Salir");
+                    + "d.- Salir");
 
             if (resp.equals("a") || resp.equals("A")) {
                 Administracion();
             } else if (resp.equals("b") || resp.equals("B")) {
-
+                Matricula();
             } else if (resp.equals("c") || resp.equals("C")) {
 
             }// fin de las condiciones
@@ -70,6 +72,33 @@ public class IngridDominguez_lab2 {
         System.out.println("salistes de la opcion administrar");
     }// metodo para gestionar toda la matricula
     
+    public static void Matricula(){
+        String nombre = JOptionPane.showInputDialog("Ingresa tu nombre: ");
+        int numeroCuenta = Integer.parseInt(JOptionPane.showInputDialog("Ingresa tu numero de cuenta: "));
+        String carrera = JOptionPane.showInputDialog("Ingresa tu carrera: ");
+        int edad = Integer.parseInt(JOptionPane.showInputDialog("Ingresa tu edad: "));
+        double dineroDisponible = Double.parseDouble(JOptionPane.showInputDialog("Ingresa tu dinero Disponible "));
+        String usuario = JOptionPane.showInputDialog("Ingresa tu Usuario: ");
+        String contraseña = JOptionPane.showInputDialog("Ingresa tu contraseña: ");
+        
+        ArrayList <String> SeccionesAlumnos = new ArrayList();
+        int aumento = 1440;
+        int contador  = 0;
+        while(contador <= dineroDisponible){
+            contador = contador+1440;
+            if(contador <=dineroDisponible ){
+                break;
+            }
+            int posicion = Integer.parseInt(JOptionPane.showInputDialog("Ingresa el numero de la secccion: \n"+secciones));
+            SeccionesAlumnos.add(Secciones.get(posicion)); 
+            
+        } // fin del while
+        
+        //creo el objeto
+        Alumnos_Creados.add(new Alumnos(nombre, numeroCuenta, carrera, edad, dineroDisponible,usuario, contraseña, SeccionesAlumnos));
+        
+        JOptionPane.showMessageDialog(null, impresionAlumno());
+    }// fin del metodo para matricular
     
     public static void CrearClase(){
         String nombre = JOptionPane.showInputDialog("Ingresa tu nombre");
@@ -81,6 +110,7 @@ public class IngridDominguez_lab2 {
         Clases_Creadas.add(new Clases(nombre, seccion, CMAlumnos, unidadesValorativas));
         secciones += ""+contSeccion+ "- "+seccion+"\n";
         Secciones.add(seccion);
+        contSeccion++;
     }// creamos la clase
     
     public static void CrearMaestro(){
@@ -93,7 +123,7 @@ public class IngridDominguez_lab2 {
         ArrayList <String>  SeccionesMaestro = new ArrayList();
         int contador = 0;
         while(contador < CantidaMaximaClases){
-            int posicion = Integer.parseInt(JOptionPane.showInputDialog("Ingresa el numero de la secccion: "+secciones));
+            int posicion = Integer.parseInt(JOptionPane.showInputDialog("Ingresa el numero de la secccion: \n"+secciones));
             SeccionesMaestro.add(Secciones.get(posicion)); 
             contador++;
         }
@@ -125,5 +155,14 @@ public class IngridDominguez_lab2 {
         return clases;
     }
     
-    
+    public static String impresionAlumno(){
+        String clases = "";
+        for (Object t : Alumnos_Creados) {
+            if(t instanceof Alumnos){
+                clases+= Alumnos_Creados.indexOf(t)+"- "+t+"\n";
+            }
+        }
+        
+        return clases;
+    }
 }// fin de la clase

@@ -40,13 +40,13 @@ public class Maestro {
                 +"\nContraseña: "+contraseña
                 +"\nCantidad Maxima Clases: "+CantidaMaxClases
                 +"\nSalario: "+salario
-                +"\nSeccione: "+secciones;
+                +"\nSeccione: "+secciones+"\n";
     }// fin del metodo
     
     public String secciones(ArrayList a){
         String Secciones = "";
         for (int i = 0; i < a.size(); i++) {
-            Secciones += "" +i+a.get(i)+ "\n";
+            Secciones += "" +i+" "+a.get(i)+ "\n";
         }
         return Secciones;
     }
