@@ -30,6 +30,15 @@ public class Alumnos {
         secciones = Secciones(clasesCursando);
     }// fin del metodo constructor
     
+    
+    public void setUsuario(String u){
+        usuarioAlumno = u;
+    }// mutador 
+    
+    public String getUsuario(){
+        return usuarioAlumno;
+    } //mutador
+    
          @Override
     public String toString(){
         return "Nombre : "+nombreAlumno

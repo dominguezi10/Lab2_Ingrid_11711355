@@ -122,6 +122,11 @@ public class IngridDominguez_lab2 {
                 String usuario = JOptionPane.showInputDialog("Ingresa tu Usuario: ");
                 String contraseña = JOptionPane.showInputDialog("Ingresa tu contraseña: ");
                 
+                /*for (Object t : Alumnos_Creados) {
+                    if(t instanceof Alumnos){
+                        if(usuario = Alumnos_Creados.get(t).){
+                    }
+                }*/
                 
             }
         }// fin del while resp usuario
