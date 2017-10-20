@@ -35,7 +35,11 @@ public class IngridDominguez_lab2 {
             if (resp.equals("a") || resp.equals("A")) {
                 Administracion();
             } else if (resp.equals("b") || resp.equals("B")) {
-                Matricula();
+                if(Clases_Creadas.size() == 0){
+                    JOptionPane.showMessageDialog(null, "Primero se crean las clases");
+                }else{
+                    Matricula();
+                }
             } else if (resp.equals("c") || resp.equals("C")) {
 
             }// fin de las condiciones
@@ -86,7 +90,7 @@ public class IngridDominguez_lab2 {
         int contador  = 0;
         while(contador <= dineroDisponible){
             contador = contador+1440;
-            if(contador <=dineroDisponible ){
+            if(contador >dineroDisponible ){
                 break;
             }
             int posicion = Integer.parseInt(JOptionPane.showInputDialog("Ingresa el numero de la secccion: \n"+secciones));
