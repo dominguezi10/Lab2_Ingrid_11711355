@@ -5,17 +5,24 @@
  */
 package ingriddominguez_lab2;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author 1234
  */
 public class IngridDominguez_lab2 {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
     
-}
+    public static void main(String[] args) {
+        String resp = "e";
+        while(resp != "e"|| resp == "E" ){
+            resp = JOptionPane.showInputDialog("Ingresa tu opcion: \n"
+                    + "a.- Administracion\n"
+                    + "b.- Matricula \n"
+                    + "c.- Log in\n"
+                    + "e.- Salir");
+        }// fin del while de respuesta de usuario
+    }// fin del main
+    
+}// fin de la clase
