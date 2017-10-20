@@ -91,6 +91,7 @@ public class IngridDominguez_lab2 {
         while(contador <= dineroDisponible){
             contador = contador+1440;
             if(contador >dineroDisponible ){
+                JOptionPane.showMessageDialog(null, "Ya no tienes fondos");
                 break;
             }
             int posicion = Integer.parseInt(JOptionPane.showInputDialog("Ingresa el numero de la secccion: \n"+secciones));
@@ -103,6 +104,16 @@ public class IngridDominguez_lab2 {
         
         JOptionPane.showMessageDialog(null, impresionAlumno());
     }// fin del metodo para matricular
+    
+    public static void LogIn(){
+        String resp = "p";
+        while(resp != "c"){
+            resp = JOptionPane.showInputDialog("Inhresa tu opcion: "
+            +"\na.- Maestro"
+            + "\nb .- Alumno");
+        }// fin del while resp usuario
+        
+    }// fin dle metood para logiarse
     
     public static void CrearClase(){
         String nombre = JOptionPane.showInputDialog("Ingresa el nombre de la clase");
@@ -169,4 +180,5 @@ public class IngridDominguez_lab2 {
         
         return clases;
     }
+    
 }// fin de la clase
