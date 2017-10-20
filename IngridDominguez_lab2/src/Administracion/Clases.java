@@ -18,15 +18,44 @@ public class Clases {
     public String maestro;
     public int unidadesValorativas;
     ArrayList <String> listaNombresAlumnos = new ArrayList();
+   //public ArrayList <String> listaClases = new ArrayList();
+   // ArrayList <String> secciones = new ArrayList();
     
-    
-    public Clases(String n, String s, int CMA, String m, int uv){
-        nombreClase = m;
+    public Clases(String n, String s, int CMA, int uv){
+        nombreClase = n;
         seccion = s;
         CantidaMaxAlumnos = CMA;
-        maestro = m;
         unidadesValorativas = uv;
+        maestro = null;
+        //listaClases.add(seccion);
     }// metodo contructor
+
+    //mutadores de la seccion
+    public void setSeccion( String s){
+        seccion = s;
+    }
+    
+    public String getSeccion(){
+        return seccion;
+    }
+    
+    @Override
+    public String toString(){
+        return "Nombre : "+nombreClase
+                +"\nSeccion : "+seccion
+                +"\nCantida Maxima Alumnos: "+CantidaMaxAlumnos
+                +"\nMaestro: "+maestro
+                +"\nUnidades Valorativas: "+unidadesValorativas;
+    }// fin del metodo
     
     
+    
+    //mutadores del nombre de la clase
+    /*public void setNombreClase(String clase){
+        nombreClase = clase;
+    }
+    
+    public String getNombreClase(){
+        return nombreClase;
+    }*/
 }// fin de la clase
