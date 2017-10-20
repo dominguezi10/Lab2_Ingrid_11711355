@@ -105,8 +105,8 @@ public class IngridDominguez_lab2 {
     }// fin del metodo para matricular
     
     public static void CrearClase(){
-        String nombre = JOptionPane.showInputDialog("Ingresa tu nombre");
-        String seccion = JOptionPane.showInputDialog("Ingresa tu seccion:");
+        String nombre = JOptionPane.showInputDialog("Ingresa el nombre de la clase");
+        String seccion = JOptionPane.showInputDialog("Ingresa la seccion:");
         int CMAlumnos = Integer.parseInt(JOptionPane.showInputDialog("Ingresa la cantida de alumnos maximo:"));
         int unidadesValorativas = Integer.parseInt(JOptionPane.showInputDialog("Ingresa la cantida de unidades valorativas:"));
         
