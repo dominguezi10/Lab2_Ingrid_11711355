@@ -110,10 +110,33 @@ public class IngridDominguez_lab2 {
         while(resp != "c"){
             resp = JOptionPane.showInputDialog("Inhresa tu opcion: "
             +"\na.- Maestro"
-            + "\nb .- Alumno");
+            + "\nb .- Alumno"
+            +"\nc.- Salir");
+            
+            if ((resp.equals("a") || resp.equals("A")) && (Clases_Creadas.size() > 0)) {
+                System.out.println("modificar maestro");
+                
+
+            } else if (resp.equals("b") || resp.equals("B")) {
+                System.out.println("modificar Alumno");
+                String usuario = JOptionPane.showInputDialog("Ingresa tu Usuario: ");
+                String contraseña = JOptionPane.showInputDialog("Ingresa tu contraseña: ");
+                
+                
+            }
         }// fin del while resp usuario
         
     }// fin dle metood para logiarse
+    
+    public static void ModificarAlumnoDatos(){
+        String nombre = JOptionPane.showInputDialog("Ingresa tu nombre: ");
+        int numeroCuenta = Integer.parseInt(JOptionPane.showInputDialog("Ingresa tu numero de cuenta: "));
+        String carrera = JOptionPane.showInputDialog("Ingresa tu carrera: ");
+        int edad = Integer.parseInt(JOptionPane.showInputDialog("Ingresa tu edad: "));
+        double dineroDisponible = Double.parseDouble(JOptionPane.showInputDialog("Ingresa tu dinero Disponible "));
+        String usuario = JOptionPane.showInputDialog("Ingresa tu Usuario: ");
+        String contraseña = JOptionPane.showInputDialog("Ingresa tu contraseña: ");
+    }// fin del metodo
     
     public static void CrearClase(){
         String nombre = JOptionPane.showInputDialog("Ingresa el nombre de la clase");
